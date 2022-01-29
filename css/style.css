@@ -1,6 +1,117 @@
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: global style start */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
-body {
+:root {
+    --main-color: #6d46af;
+    --main-color-hover: #411b81;
+    --white-color: #fff;
+    --black-color: #000;
+    --grey-color: #c4c4c4;
+    --logo-font: 35px;
+    --nav-font: 20px;
+    --box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+* {
     font-family: "poppins", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: global style finished */
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: header style start */
+header {
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+header .container {
+    padding: 5px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    font-size: var(--logo-font);
+    text-transform: uppercase;
+}
+header ul {
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+header .menu li a {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+    color: var(--grey-color);
+    font-size: var(--nav-font);
+}
+header .menu li a:hover {
+    color: var(--main-color);
+}
+header .menu .Active {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: var(--nav-font);
+}
+header .login-signup li {
+    font-size: var(--nav-font);
+    color: var(--main-color);
+    font-weight: 600;
+}
+section .body {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-color);
+    font-size: var(--nav-font);
+    color: var(--grey-color);
+    letter-spacing: 1px;
+}
+header .toggle-btn {
+    cursor: pointer;
+    font-size: var(--nav-font);
+    color: var(--main-color);
+    display: none;
+}
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: header style finished */
+@media (max-width: 960px) {
+    header .toggle-btn {
+        display: block;
+    }
+    header .menu {
+        position: fixed;
+        background-color: var(--black-color);
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    header .menu ul {
+        display: block;
+    }
+    header .menu .Active {
+        font-size: var(--logo-font);
+    }
+    header .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: var(--logo-font);
+    }
+    header .toggle-btn {
+        display: block;
+        z-index: 11;
+        padding: 50px 5px;
+        font-size: var(--logo-font);
+        color: var(--white-color);
+    }
 }
